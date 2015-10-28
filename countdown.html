@@ -1,0 +1,145 @@
+<html>
+ <head>
+  <title>Countdown</title>
+  <link rel="stylesheet" type="text/css" href="countdown.css">
+  <link rel="stylesheet" type="text/css" href="font-awesome-4.4.0/css/font-awesome.min.css">
+ </head>
+ <body>
+  <div id="app">
+  </div>
+
+  <span id='message' class="message">Focus is Key. Accomplish or Remove one Ambition</span>
+  <span id='message0' class="message">Congratulations. Keep up the Good Work.</span>
+
+
+  <script id="ambition-select-template" type="text/x-handlebars-template">
+    <p id="ambition-question">This is your <b>AMBITION</b></p>
+    <footer data-ambitionId={{id}}>
+      <div id="disabled-icon-box">
+        <i class="fa fa-{{SYMBOL}}"></i>
+      </div>
+      <textarea id="ambition-text" placeholder= "Type ..."autofocus maxlength="300" disabled >{{ambitionText}}</textarea>
+    </footer>
+    <span id="delete-ambition" class="view-option color-transition">Delete</span>
+    <span id="return" class="view-option color-transition">Return</span>
+    <span id="achieve-ambition" class="view-option color-transition">Achieve</span>
+
+  </script>
+
+  <script id="ambition-symbol-list-template" type="text/x-handlebars-template">
+    <div id="ambition-symbol-list">
+      <ul>
+        {{#symbolList}}
+          <li id="{{symbolNum}}"><i class="fa fa-{{ambitionSymbol}}"></i></li>
+        {{/symbolList}}
+      </ul>
+    </div>
+  </script>
+
+  <script id="ambition-text-list-template" type="text/x-handlebars-template">
+    <div id="ambition-text-list">
+      {{#textList}}
+        <span data-symbol="{{symbolNum}}">{{ambitionText}}</span>
+      {{/textList}}
+    </div>
+  </script>
+
+  <script id="option-template" type="text/x-handlebars-template">
+    <div id="switch-timer" class="action-icon color-transition" style="left: 20px">
+      <i class="fa fa-hourglass"></i>
+    </div>
+    <div id="add-ambition" class="action-icon color-transition" style="right: 20px">
+      <i class="fa fa-plus"></i>
+    </div>
+  </script>
+
+  <script id="change-symbol-template" type="text/x-handlebars-template">
+    <div id="change-Symbol">
+      <ul>
+        <li><i class="fa fa-book"></i></li>
+        <li><i class="fa fa-balance-scale"></i></li>
+        <li><i class="fa fa-paper-plane"></i></li>
+        <li><i class="fa fa-heart"></i></li>
+        <li><i class="fa fa-university"></i></li>
+        <li><i class="fa fa-trophy"></i></li>
+        <li><i class="fa fa-rocket"></i></li>
+        <li><i class="fa fa-paint-brush"></i></li>
+        <li><i class="fa fa-language"></i></li>
+        <li><i class="fa fa-graduation-cap"></i></li>
+        <li><i class="fa fa-flask"></i></li>
+        <li><i class="fa fa-glass"></i></li>
+        <li><i class="fa fa-gamepad"></i></li>
+        <li><i class="fa fa-diamond"></i></li>
+        <li><i class="fa fa-cutlery"></i></li>
+        <li><i class="fa fa-camera-retro"></i></li>
+        <li><i class="fa fa-briefcase"></i></li>
+        <li><i class="fa fa-futbol-o"></i></li>
+        <li><i class="fa fa-cloud"></i></li>
+        <li><i class="fa fa-coffee"></i></li>
+        <li><i class="fa fa-globe"></i></li>
+        <li><i class="fa fa-headphones"></i></li>
+        <li><i class="fa fa-microphone"></i></li>
+        <li><i class="fa fa-music"></i></li>
+        <li><i class="fa fa-plane"></i></li>
+        <li><i class="fa fa-money"></i></li>
+        <li><i class="fa fa-paw"></i></li>
+        <li><i class="fa fa-magic"></i></li>
+        <li><i class="fa fa-leaf"></i></li>
+        <li><i class="fa fa-cogs"></i></li>
+        <li><i class="fa fa-bolt"></i></li>
+        <li><i class="fa fa-hand-rock-o"></i></li>
+        <li><i class="fa fa-film"></i></li>
+      </ul>
+    </div>
+  </script>
+
+  <script id="add-ambition-template" type="text/x-handlebars-template">
+    <div id="add-ambition">
+      <p id="ambition-question">What is your <b>AMBITION</b>?</p>
+      <footer>
+        <div id="icon-box">
+          <i class="fa fa-{{SYMBOL}}"></i>
+        </div>
+        <textarea id="ambition-text" placeholder= "Type ..."autofocus>{{ambitionText}}</textarea>
+      </footer>
+
+      <i class="fa fa-check color-transition" id="accept"></i>
+    </div>
+  </script>
+
+  <script id="question-template" type="text/x-handlebars-template">
+    <form>
+      <p id="birthdate-label" class="input-label">Birthdate</p>
+      <input type="date" id="birthdate" required="required">
+      <p id="death-label" class="input-label" style="margin-top: 15px">Age of Death</p>
+      <input type="number" id="deathage" required="required" style="width: 115px">
+      <button type="submit" id="submit" class="background-color-transition">Countdown</button>
+    </form>
+  </script>
+
+  <script id="countdown-short-template" type="text/x-handlebars-template">
+    <h1 id="countdown-label">COUNTDOWN</h1>
+    <h2 id="count">{{YEAR}}<sup>.{{MILLISECOND}}</sup></h2>
+  </script>
+
+  <script id="countdown-long-template" type="text/x-handlebars-template">
+    <h1 id="countdown-label2">COUNTDOWN</h1>
+    <h2 id="count2">{{YEAR}} {{MONTH}} {{DAY}} {{HOUR}} {{MINUTE}} {{SECOND}} {{MILLISECOND}}</h2>
+    <span id="time-label">
+      <span class="time-labels">YEARS</span>
+      <span class="time-labels">MONTHS</span>
+      <span class="time-labels">DAYS</span>
+      <span class="time-labels">HOURS</span>
+      <span class="time-labels">MINUTES</span>
+      <span class="time-labels">SECONDS</span>
+      <span class="time-labels">MS</span>
+    </span>
+  </script>
+
+
+
+  <script src="jquery-1.11.3.min.js"></script>
+  <script src="handlebars.js"></script>
+  <script src="countdown.js"></script>
+ </body>
+</html>

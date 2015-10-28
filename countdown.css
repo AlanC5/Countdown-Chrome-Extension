@@ -1,0 +1,285 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 100px;
+}
+
+body, input {
+  display: -webkit-flex;
+  font-family: 'Avenir', 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+#countdown-label {
+  color: #B0B5B9;
+  line-height: 0;
+  font-size: 30px;
+  margin: 0 0 0 2px;
+}
+
+#count {
+  color: #494949;
+  font-size: 200px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+}
+
+#count sup {
+  font-size: 80px;
+  margin-left: 7px;
+}
+
+#countdown-label2 {
+  color: #B0B5B9;
+  line-height: 1;
+  font-size: 18px;
+  margin: 0 0 0 2px;
+}
+
+#count2 {
+  color: #494949;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+  margin-left: 6px;
+  margin-right: 8px;
+}
+
+#time-label {
+  -webkit-user-select: none;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.time-labels {
+  text-align: center;
+  -webkit-user-select: none;
+  position: relative;
+  margin: 0;
+  flex-basis: 0;
+  flex-grow: 1;
+  font-weight: 400;
+  line-height: 1;
+  cursor: default;
+}
+
+
+.input-label {
+  color: #B0B5B9;
+  line-height: 1.2;
+  font-size: 30px;
+  margin: 0 0 0 2px;
+}
+
+input {
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border: 1px solid #CCC;
+  margin: 0;
+  outline: none;
+}
+
+
+#birthdate::-webkit-calendar-picker-indicator{
+  display: none;
+}
+
+#birthdate::-webkit-clear-button{
+  display: none;
+}
+
+#birthdate::-webkit-inner-spin-button,
+#deathdate::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+#submit {
+  background-color: #20AAEA;
+  border: none;
+  color: white;
+  cursor: pointer;
+  float: right;
+  margin-top: 25px;
+  outline: none;
+}
+
+#submit:hover {
+  background-color: #42C0F2;
+}
+
+.background-color-transition {
+  -webkit-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+
+.color-transition {
+  -webkit-transition: color 300ms linear;
+  transition: color 300ms linear;
+}
+
+input, button {
+  border-radius: 10px;
+  font-size: 50px;
+  padding: 6px 12px;
+}
+
+.action-icon {
+  bottom: 20px;
+  color: black;
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+}
+
+.action-icon:hover {
+  color: #a9a9a9;
+}
+
+#ambition-question {
+  font-size: 60px;
+  margin: 0px;
+  line-height: 2;
+}
+
+footer {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+}
+
+#icon-box {
+  cursor: pointer;
+  display: -webkit-flex;
+  font-size: 110px;
+  -webkit-justify-content: center;
+  width: 20%;
+  -webkit-transition: color 300ms linear;
+  transition: color 300ms linear;
+}
+
+#icon-box:hover {
+  color: #a9a9a9;
+}
+
+#disabled-icon-box {
+  cursor: pointer;
+  display: -webkit-flex;
+  font-size: 110px;
+  -webkit-justify-content: center;
+  width: 20%;
+}
+
+#ambition-text {
+  border: none;
+  font-size: 40px;
+  outline: none;
+  resize: none;
+  width: 80%;
+  height: 190px;
+  padding-left: 24px;
+}
+
+#accept {
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+#accept:hover {
+  color: #a9a9a9;
+}
+
+#change-Symbol {
+  box-sizing: border-box;
+  padding: 20px 40px;
+  width: 100%;
+}
+
+#change-Symbol ul,
+#ambition-symbol-list ul {
+  padding: 0px;
+}
+
+#change-Symbol li,
+#ambition-symbol-list li {
+  cursor: pointer;
+  display: inline-table;
+  list-style: none;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  -webkit-transition: color 300ms linear;
+  transition: color 300ms linear;
+}
+
+#change-Symbol li:hover,
+#ambition-symbol-list li:hover {
+  color: #a9a9a9;
+}
+
+#change-Symbol li .fa,
+#ambition-symbol-list li .fa {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#ambition-text-list {
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  margin-top: 85px;
+  font-size: 30px;
+  padding: 0 200px;
+}
+
+#ambition-text-list span{
+  display: none;
+}
+
+.message {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  display: none;
+}
+
+.view-option {
+  position: absolute;
+  bottom: 5px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.view-option:hover {
+  color: #a9a9a9;
+}
+
+#delete-ambition {
+  left: 20px;
+}
+
+#return {
+  left: 47%;
+}
+
+#achieve-ambition {
+  right: 20px;
+}
