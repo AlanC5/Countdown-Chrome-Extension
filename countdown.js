@@ -1,4 +1,4 @@
-// Beware of Sloppy Code
+
 
 // Expanded Form is referred to as Year, Month, Day, Hour, Minute, Second, Milisecond
 // One Year Form is the Expanded Form, but countdown to the user's next birthday
