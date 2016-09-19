@@ -16,6 +16,10 @@ The user experience needs to be improved in several ways.
 - Notify users when countdown mode changes, multiple people have voiced confusion concerning the lack of labels
 - Users are unaware that they can change the "icon" for their goal and ambition
 
+Known Bug Issues
+- Goals text displays on top of timer
+
+
 
 
 
